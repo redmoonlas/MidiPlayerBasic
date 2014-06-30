@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EB0EFB519606EC400F44E52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0EFB419606EC400F44E52 /* main.m */; };
+		3EB0EFB819606EC400F44E52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0EFB719606EC400F44E52 /* AppDelegate.m */; };
+		3EB0EFBB19606EC400F44E52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0EFBA19606EC400F44E52 /* ViewController.m */; };
+		3EB0EFBE19606EC400F44E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0EFBC19606EC400F44E52 /* Main.storyboard */; };
+		3EB0EFC019606EC400F44E52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0EFBF19606EC400F44E52 /* Images.xcassets */; };
+		3EB0EFCC19606EC400F44E52 /* MidiPlayerBasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0EFCB19606EC400F44E52 /* MidiPlayerBasicTests.m */; };
+		3EB0EFD719607CF400F44E52 /* MidiPlayerBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0EFD619607CF400F44E52 /* MidiPlayerBasic.m */; };
+		3EB0EFDD1960B81100F44E52 /* dummy1.mid in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0EFD91960B81100F44E52 /* dummy1.mid */; };
+		3EB0EFDE1960B81100F44E52 /* dummy2.mid in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0EFDA1960B81100F44E52 /* dummy2.mid */; };
+		3EB0EFDF1960B81100F44E52 /* ten.mid in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0EFDB1960B81100F44E52 /* ten.mid */; };
+		3EB0EFE01960B81100F44E52 /* ten2.mid in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0EFDC1960B81100F44E52 /* ten2.mid */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3EB0EFC619606EC400F44E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EB0EFA719606EC400F44E52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EB0EFAE19606EC400F44E52;
+			remoteInfo = MidiPlayerBasic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3EB0EFAF19606EC400F44E52 /* MidiPlayerBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidiPlayerBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EB0EFB319606EC400F44E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EB0EFB419606EC400F44E52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3EB0EFB619606EC400F44E52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3EB0EFB719606EC400F44E52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3EB0EFB919606EC400F44E52 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3EB0EFBA19606EC400F44E52 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3EB0EFBD19606EC400F44E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EB0EFBF19606EC400F44E52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3EB0EFC519606EC400F44E52 /* MidiPlayerBasicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidiPlayerBasicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EB0EFCA19606EC400F44E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EB0EFCB19606EC400F44E52 /* MidiPlayerBasicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MidiPlayerBasicTests.m; sourceTree = "<group>"; };
+		3EB0EFD519607CDC00F44E52 /* MidiPlayerBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiPlayerBasic.h; sourceTree = "<group>"; };
+		3EB0EFD619607CF400F44E52 /* MidiPlayerBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiPlayerBasic.m; sourceTree = "<group>"; };
+		3EB0EFD91960B81100F44E52 /* dummy1.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = dummy1.mid; sourceTree = "<group>"; };
+		3EB0EFDA1960B81100F44E52 /* dummy2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = dummy2.mid; sourceTree = "<group>"; };
+		3EB0EFDB1960B81100F44E52 /* ten.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = ten.mid; sourceTree = "<group>"; };
+		3EB0EFDC1960B81100F44E52 /* ten2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = ten2.mid; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EB0EFAC19606EC400F44E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EB0EFC219606EC400F44E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EB0EFA619606EC400F44E52 = {
+			isa = PBXGroup;
+			children = (
+				3EB0EFB119606EC400F44E52 /* MidiPlayerBasic */,
+				3EB0EFC819606EC400F44E52 /* MidiPlayerBasicTests */,
+				3EB0EFB019606EC400F44E52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EB0EFB019606EC400F44E52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EB0EFAF19606EC400F44E52 /* MidiPlayerBasic.app */,
+				3EB0EFC519606EC400F44E52 /* MidiPlayerBasicTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EB0EFB119606EC400F44E52 /* MidiPlayerBasic */ = {
+			isa = PBXGroup;
+			children = (
+				3EB0EFD81960B7F900F44E52 /* MidiFiles */,
+				3EB0EFB619606EC400F44E52 /* AppDelegate.h */,
+				3EB0EFB719606EC400F44E52 /* AppDelegate.m */,
+				3EB0EFB919606EC400F44E52 /* ViewController.h */,
+				3EB0EFBA19606EC400F44E52 /* ViewController.m */,
+				3EB0EFD519607CDC00F44E52 /* MidiPlayerBasic.h */,
+				3EB0EFD619607CF400F44E52 /* MidiPlayerBasic.m */,
+				3EB0EFBC19606EC400F44E52 /* Main.storyboard */,
+				3EB0EFBF19606EC400F44E52 /* Images.xcassets */,
+				3EB0EFB219606EC400F44E52 /* Supporting Files */,
+			);
+			path = MidiPlayerBasic;
+			sourceTree = "<group>";
+		};
+		3EB0EFB219606EC400F44E52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EB0EFB319606EC400F44E52 /* Info.plist */,
+				3EB0EFB419606EC400F44E52 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3EB0EFC819606EC400F44E52 /* MidiPlayerBasicTests */ = {
+			isa = PBXGroup;
+			children = (
+				3EB0EFCB19606EC400F44E52 /* MidiPlayerBasicTests.m */,
+				3EB0EFC919606EC400F44E52 /* Supporting Files */,
+			);
+			path = MidiPlayerBasicTests;
+			sourceTree = "<group>";
+		};
+		3EB0EFC919606EC400F44E52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EB0EFCA19606EC400F44E52 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3EB0EFD81960B7F900F44E52 /* MidiFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3EB0EFD91960B81100F44E52 /* dummy1.mid */,
+				3EB0EFDA1960B81100F44E52 /* dummy2.mid */,
+				3EB0EFDB1960B81100F44E52 /* ten.mid */,
+				3EB0EFDC1960B81100F44E52 /* ten2.mid */,
+			);
+			name = MidiFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EB0EFAE19606EC400F44E52 /* MidiPlayerBasic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EB0EFCF19606EC400F44E52 /* Build configuration list for PBXNativeTarget "MidiPlayerBasic" */;
+			buildPhases = (
+				3EB0EFAB19606EC400F44E52 /* Sources */,
+				3EB0EFAC19606EC400F44E52 /* Frameworks */,
+				3EB0EFAD19606EC400F44E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MidiPlayerBasic;
+			productName = MidiPlayerBasic;
+			productReference = 3EB0EFAF19606EC400F44E52 /* MidiPlayerBasic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3EB0EFC419606EC400F44E52 /* MidiPlayerBasicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EB0EFD219606EC400F44E52 /* Build configuration list for PBXNativeTarget "MidiPlayerBasicTests" */;
+			buildPhases = (
+				3EB0EFC119606EC400F44E52 /* Sources */,
+				3EB0EFC219606EC400F44E52 /* Frameworks */,
+				3EB0EFC319606EC400F44E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EB0EFC719606EC400F44E52 /* PBXTargetDependency */,
+			);
+			name = MidiPlayerBasicTests;
+			productName = MidiPlayerBasicTests;
+			productReference = 3EB0EFC519606EC400F44E52 /* MidiPlayerBasicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EB0EFA719606EC400F44E52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Salvatore Avanzo";
+				TargetAttributes = {
+					3EB0EFAE19606EC400F44E52 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					3EB0EFC419606EC400F44E52 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 3EB0EFAE19606EC400F44E52;
+					};
+				};
+			};
+			buildConfigurationList = 3EB0EFAA19606EC400F44E52 /* Build configuration list for PBXProject "MidiPlayerBasic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3EB0EFA619606EC400F44E52;
+			productRefGroup = 3EB0EFB019606EC400F44E52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EB0EFAE19606EC400F44E52 /* MidiPlayerBasic */,
+				3EB0EFC419606EC400F44E52 /* MidiPlayerBasicTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EB0EFAD19606EC400F44E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EB0EFDF1960B81100F44E52 /* ten.mid in Resources */,
+				3EB0EFDE1960B81100F44E52 /* dummy2.mid in Resources */,
+				3EB0EFDD1960B81100F44E52 /* dummy1.mid in Resources */,
+				3EB0EFE01960B81100F44E52 /* ten2.mid in Resources */,
+				3EB0EFBE19606EC400F44E52 /* Main.storyboard in Resources */,
+				3EB0EFC019606EC400F44E52 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EB0EFC319606EC400F44E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EB0EFAB19606EC400F44E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EB0EFBB19606EC400F44E52 /* ViewController.m in Sources */,
+				3EB0EFB819606EC400F44E52 /* AppDelegate.m in Sources */,
+				3EB0EFD719607CF400F44E52 /* MidiPlayerBasic.m in Sources */,
+				3EB0EFB519606EC400F44E52 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EB0EFC119606EC400F44E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EB0EFCC19606EC400F44E52 /* MidiPlayerBasicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EB0EFC719606EC400F44E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EB0EFAE19606EC400F44E52 /* MidiPlayerBasic */;
+			targetProxy = 3EB0EFC619606EC400F44E52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3EB0EFBC19606EC400F44E52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EB0EFBD19606EC400F44E52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EB0EFCD19606EC400F44E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3EB0EFCE19606EC400F44E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EB0EFD019606EC400F44E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MidiPlayerBasic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3EB0EFD119606EC400F44E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MidiPlayerBasic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3EB0EFD319606EC400F44E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MidiPlayerBasic.app/MidiPlayerBasic";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MidiPlayerBasicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		3EB0EFD419606EC400F44E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MidiPlayerBasic.app/MidiPlayerBasic";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MidiPlayerBasicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EB0EFAA19606EC400F44E52 /* Build configuration list for PBXProject "MidiPlayerBasic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EB0EFCD19606EC400F44E52 /* Debug */,
+				3EB0EFCE19606EC400F44E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EB0EFCF19606EC400F44E52 /* Build configuration list for PBXNativeTarget "MidiPlayerBasic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EB0EFD019606EC400F44E52 /* Debug */,
+				3EB0EFD119606EC400F44E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3EB0EFD219606EC400F44E52 /* Build configuration list for PBXNativeTarget "MidiPlayerBasicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EB0EFD319606EC400F44E52 /* Debug */,
+				3EB0EFD419606EC400F44E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EB0EFA719606EC400F44E52 /* Project object */;
+}
