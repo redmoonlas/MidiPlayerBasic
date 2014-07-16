@@ -10,8 +10,8 @@
 
 @interface ViewController : UIViewController
 
-- (void) loadAndPlayCmd:(UIButton*)sender;
-- (void) stopPlayingCmd:(UIButton*)sender;
+- (IBAction)loadAndPlay:(UIButton *)sender;
+- (IBAction)stop:(UIButton *)sender;
 
 @end
 

@@ -20,26 +20,28 @@
 
 @implementation ViewController
 
-- (MidiPlayerBasic*) midiPlayer {
-    if (!_midiPlayer) {
+- (MidiPlayerBasic*) midiPlayer
+{
+    if (!_midiPlayer)
+    {
         _midiPlayer = [[MidiPlayerBasic alloc] init];
     }
     return _midiPlayer;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-
-    [self.loadAndPlay addTarget:self action:@selector(loadAndPlayCmd:) forControlEvents:UIControlEventTouchDown];
-    [self.stopPlaying addTarget:self action:@selector(stopPlayingCmd:) forControlEvents:UIControlEventTouchDown];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void) loadAndPlayCmd:(UIButton*)sender {
+- (IBAction)loadAndPlay:(UIButton *)sender
+{
     NSLog(@"Load and Play");
     
     NSURL *myMidiFile = [[NSBundle mainBundle]
@@ -49,7 +51,8 @@
     [self.midiPlayer play];
 }
 
-- (void) stopPlayingCmd:(UIButton *)sender {
+- (IBAction)stop:(UIButton *)sender
+{
     [self.midiPlayer stop];
 }
 
