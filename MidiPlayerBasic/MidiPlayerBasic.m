@@ -18,10 +18,13 @@
 
 @interface MidiPlayerBasic ()
 
+
+
 @property (nonatomic) MusicPlayer musicPlayer;
 @property (nonatomic) MusicSequence musicSequence;
 
 -(MIDIEndpointRef) setUpMusicSequenceWithMidiDestination;
+-(void) setMidiDestination;
 
 @end
 
@@ -54,7 +57,7 @@
     // aggancia la musicSequence al MidiDestination & CallBack
     //MusicSequenceSetMIDIEndpoint(_musicSequence,
     
-    [self setUpMusicSequenceWithMidiDestination];
+    [self  setMidiDestination];
 
     
     // Collega ila player alla musicSequence
@@ -80,6 +83,37 @@
 
 #pragma mark - Helper Methods
 
+
+-(void) setMidiDestination{
+    
+    //   Create a MidiDestination  ++++++++++++++++++++++++++++
+    
+    MIDIClientRef   virtualMidi;
+    MIDIClientCreate(CFSTR("VirtualClient"),
+                                MyMIDINotifyProc,
+                                (__bridge void *)(self),
+                                &virtualMidi);
+    
+    
+    
+    MIDIEndpointRef virtualEndpoint;
+    
+     MIDIDestinationCreate(virtualMidi,
+                                      (CFSTR("VirtualDestination")),
+                                      MyMIDIReadProc,
+                                      NULL,//self->_mySampler.samplerUnit,
+                                      &virtualEndpoint);
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+    // aggancia la musicSequence al virtualEndpoint
+    MusicSequenceSetMIDIEndpoint(self.musicSequence,
+                                            virtualEndpoint);
+    
+    
+}
+
+
+
 -(MIDIEndpointRef) setUpMusicSequenceWithMidiDestination{
     //+++++++   Crea la MidiDestination  ++++++++++++++++++++++++++++
     // Usare questa funzione ogni volta dopo aver caricato un nuovo midifile
@@ -100,6 +134,11 @@
                           NULL,// --> da sostituire con AUGraph
                           &virtualEndpoint);
     
+    
+    MusicSequenceSetMIDIEndpoint(_musicSequence,virtualEndpoint);
+    
+    
+    
     return virtualEndpoint;
 }
 
@@ -113,7 +152,7 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
                            void *refCon,
                            void *connRefCon) {
     
-    // NSLog(@"MyMIDIReadProc");
+   //  NSLog(@"MyMIDIReadProc");
     
     // Cast our Sampler unit back to an audio unit
     AudioUnit *player = (AudioUnit*) refCon;
