@@ -13,6 +13,136 @@
 //__________________  CALLBACKs  __________________________
 
 
+
+
+
+@interface MidiPlayerBasic ()
+
+
+
+@property (nonatomic) MusicPlayer musicPlayer;
+@property (nonatomic) MusicSequence musicSequence;
+
+-(MIDIEndpointRef) setUpMusicSequenceWithMidiDestination;
+-(void) setMidiDestination;
+
+@end
+
+@implementation MidiPlayerBasic
+
+-(id)init {
+    if ( self = [super init] ) {
+        OSStatus status = NewMusicPlayer(&_musicPlayer);
+        NSLog(@"Music Player created (%d)", (int)status);
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    DisposeMusicPlayer(self.musicPlayer);
+}
+
+- (void) loadMIDIFile: (NSURL*) midiFileURL
+{
+    NewMusicSequence(&_musicSequence);
+    
+    OSStatus status = MusicSequenceFileLoad(_musicSequence,
+                                     (__bridge CFURLRef) midiFileURL,
+                                     0, // can be zero in many cases
+                                     kMusicSequenceLoadSMF_ChannelsToTracks);
+    
+    NSLog(@"File loaded (%d)", (int)status);
+    
+    // aggancia la musicSequence al MidiDestination & CallBack
+    //MusicSequenceSetMIDIEndpoint(_musicSequence,
+    
+    [self  setMidiDestination];
+
+    
+    // Collega ila player alla musicSequence
+    MusicPlayerSetSequence(self.musicPlayer, _musicSequence);
+
+    status = MusicPlayerPreroll(self.musicPlayer);
+    
+    NSLog(@"Preroll (%d)", (int)status);
+}
+
+- (void) play
+{
+    OSStatus status = MusicPlayerStart(_musicPlayer);
+    NSLog(@"Play (%d)", (int)status);
+}
+
+- (void) stop
+{
+    OSStatus status = MusicPlayerStop(self.musicPlayer);
+    NSLog(@"Stop (%d)", (int)status);
+    DisposeMusicSequence(self.musicSequence);
+}
+
+#pragma mark - Helper Methods
+
+
+-(void) setMidiDestination{
+    
+    //   Create a MidiDestination  ++++++++++++++++++++++++++++
+    
+    MIDIClientRef   virtualMidi;
+    MIDIClientCreate(CFSTR("VirtualClient"),
+                                MyMIDINotifyProc,
+                                (__bridge void *)(self),
+                                &virtualMidi);
+    
+    
+    
+    MIDIEndpointRef virtualEndpoint;
+    
+     MIDIDestinationCreate(virtualMidi,
+                                      (CFSTR("VirtualDestination")),
+                                      MyMIDIReadProc,
+                                      NULL,//self->_mySampler.samplerUnit,
+                                      &virtualEndpoint);
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+    // aggancia la musicSequence al virtualEndpoint
+    MusicSequenceSetMIDIEndpoint(self.musicSequence,
+                                            virtualEndpoint);
+    
+    
+}
+
+
+
+-(MIDIEndpointRef) setUpMusicSequenceWithMidiDestination{
+    //+++++++   Crea la MidiDestination  ++++++++++++++++++++++++++++
+    // Usare questa funzione ogni volta dopo aver caricato un nuovo midifile
+    // e settato la musicSequence
+    
+    // Crea il virtuaMidi
+    MIDIClientRef   virtualMidi;
+    MIDIClientCreate(CFSTR("VirtualClient"),
+                        MyMIDINotifyProc,
+                        NULL,
+                        &virtualMidi);
+    
+    // Crea il virtualEndpoint
+    MIDIEndpointRef virtualEndpoint;
+    MIDIDestinationCreate(virtualMidi,
+                          (CFSTR("VirtualDestination")),
+                          MyMIDIReadProc,
+                          NULL,// --> da sostituire con AUGraph
+                          &virtualEndpoint);
+    
+    
+    MusicSequenceSetMIDIEndpoint(_musicSequence,virtualEndpoint);
+    
+    
+    
+    return virtualEndpoint;
+}
+
+#pragma mark - CALLBACKs
 void MyMIDINotifyProc (const MIDINotification  *message, void *refCon) {
     printf("MIDI Notify, messageId=%d,", (int)message->messageID);
 }
@@ -22,7 +152,7 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
                            void *refCon,
                            void *connRefCon) {
     
-    // NSLog(@"MyMIDIReadProc");
+   //  NSLog(@"MyMIDIReadProc");
     
     // Cast our Sampler unit back to an audio unit
     AudioUnit *player = (AudioUnit*) refCon;
@@ -98,94 +228,5 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
         packet = MIDIPacketNext(packet);
     }
 }
-
-
-@interface MidiPlayerBasic ()
-
-@property (nonatomic) MusicPlayer musicPlayer;
-@property (nonatomic) MusicSequence musicSequence;
-
--(MIDIEndpointRef) setUpMusicSequenceWithMidiDestination;
-
-@end
-
-@implementation MidiPlayerBasic
-
--(id)init {
-    if ( self = [super init] ) {
-        OSStatus status = NewMusicPlayer(&_musicPlayer);
-        NSLog(@"Music Player created (%d)", (int)status);
-    }
-    return self;
-}
-
-- (void)dealloc
-{
-    DisposeMusicPlayer(self.musicPlayer);
-}
-
-- (void) loadMIDIFile: (NSURL*) midiFileURL
-{
-    NewMusicSequence(&_musicSequence);
-    
-    OSStatus status = MusicSequenceFileLoad(_musicSequence,
-                                     (__bridge CFURLRef) midiFileURL,
-                                     0, // can be zero in many cases
-                                     kMusicSequenceLoadSMF_ChannelsToTracks);
-    
-    NSLog(@"File loaded (%d)", (int)status);
-    
-    // aggancia la musicSequence al MidiDestination & CallBack
-    //MusicSequenceSetMIDIEndpoint(_musicSequence, [self setUpMusicSequenceWithMidiDestination]);
-
-    
-    // Collega ila player alla musicSequence
-    MusicPlayerSetSequence(self.musicPlayer, _musicSequence);
-
-    status = MusicPlayerPreroll(self.musicPlayer);
-    
-    NSLog(@"Preroll (%d)", (int)status);
-}
-
-- (void) play
-{
-    OSStatus status = MusicPlayerStart(_musicPlayer);
-    NSLog(@"Play (%d)", (int)status);
-}
-
-- (void) stop
-{
-    OSStatus status = MusicPlayerStop(self.musicPlayer);
-    NSLog(@"Stop (%d)", (int)status);
-    DisposeMusicSequence(self.musicSequence);
-}
-
-#pragma mark - Helper Methods
-
--(MIDIEndpointRef) setUpMusicSequenceWithMidiDestination{
-    //+++++++   Crea la MidiDestination  ++++++++++++++++++++++++++++
-    // Usare questa funzione ogni volta dopo aver caricato un nuovo midifile
-    // e settato la musicSequence
-    
-    // Crea il virtuaMidi
-    MIDIClientRef   virtualMidi;
-    MIDIClientCreate(CFSTR("VirtualClient"),
-                        MyMIDINotifyProc,
-                        NULL,
-                        &virtualMidi);
-    
-    // Crea il virtualEndpoint
-    MIDIEndpointRef virtualEndpoint;
-    MIDIDestinationCreate(virtualMidi,
-                          (CFSTR("VirtualDestination")),
-                          MyMIDIReadProc,
-                          NULL,// --> da sostituire con AUGraph
-                          &virtualEndpoint);
-    
-    return virtualEndpoint;
-}
-
-#pragma mark - CALLBACKs
-
 
 @end
